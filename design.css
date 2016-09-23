@@ -1,0 +1,257 @@
+
+#images img {
+	/* overlays all the images*/
+	width: 50%;
+	height: 60%;
+	position: absolute;
+	top: 20%;
+    left: 25%;
+	transition: 1s;
+	visibility: hidden;
+}
+/* The container */
+#slideNav{
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 1%;
+	left: 0;
+}
+header {
+	display: block;
+	width: 100%;
+	margin: 0px;
+	
+}
+/* Where the circle are going to be */
+#slideUp {
+	display: block;
+	width: 100%;
+	height: 20%;
+
+}
+
+#slideAnimation{
+	display: block;
+	width: 5%;
+	height: 15%;
+	margin-right: 5%;
+	margin-top: 10%;
+	float: right;  /*is going to be on the right side of the slideShow */
+}
+
+#slideAnimation ul {
+	margin: 0;
+	float: right;
+	display: block;
+	width: 100%;
+	height: 100%;
+	
+}
+#slideAnimation li {
+	/* We don't need the dots */
+	list-style: none;
+	display: block;
+	background-color: rgba(0,0,0,0.70);
+	width: 25%;
+	height: 100%;
+	margin-left: 5%;
+	float: left; /* On the same line */
+	visibility: hidden;
+	border-bottom-left-radius:: 25px;
+	border-top-left-radius:: 25px;
+	border-bottom-right-radius:: 25px;
+	border-top-right-radius:: 25px;
+}
+
+#slideArrow {
+	display: block;
+	width: 100%;
+	height: 15%;
+	margin-top: 10%;
+}
+
+#arrowLeft {
+	width: 8%;
+	height: 100%;
+	float: left;
+	margin-left: 3%;
+	opacity: 0.5;
+}
+/* button effect */
+#arrowLeft:hover {
+	opacity: 0.8;
+}
+
+#arrowRight {
+	width: 8%;
+	height: 100%;
+	float: right;
+	margin-right: 3%;
+	opacity: 0.5;
+}
+#arrowRight:hover {
+	opacity: 0.8;
+}
+/* Now we have to add the info at the bottom of the slideShow */
+
+#slideBottom {
+	display: block;
+	background-color: rgb(48,48,48);
+	width: 100%;
+	height: 15%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	
+}
+
+#slideBottom p {
+	font: normal 200% Arial;
+	color: #fff;
+	position: absolute;
+	background-color: rgb(48,48,48);
+	left: 25%;
+	margin-top: 15px;
+	visibility: hidden;	
+}
+
+#slideTop {
+	display: block;
+	background-color: rgb(48,48,48);
+	width: 100%;
+	height: 4%;
+	position: absolute;
+	left: 0;
+	top: 12%;
+	
+}
+
+
+nav {
+display: block;
+width: 100%;
+}
+
+
+
+
+nav ul {
+list-style-type: none;
+margin: 0px;
+padding: 0px;
+
+font: normal 120% Arial;
+}
+
+nav ul li {
+display: block;
+float: left;
+width: 15.6%;
+height: 20px;
+text-align: center;
+color: white;
+line-height: 1em;
+margin: 2px 14px 5px 15px;
+}
+
+
+nav ul li:hover {
+	background-color: rgb(128,128,128);
+	color: white;
+}
+
+
+#main {
+	
+	color: black;
+
+	background-color: rgb(255,255,255);
+	margin-left: 20px;
+	
+}
+
+
+
+#main p {
+	text-align: left;
+	font-size: 16px;
+	margin-left: 100px;
+}
+
+#content  h1 {
+
+	padding-top: 50px;
+	margin-left: 400px;
+
+}
+
+#content p {
+
+	padding-top: 50px;
+	margin-left: 400px;
+
+}
+
+p 
+{
+    color: black;
+    background-color: rgb(255,255,255);
+}
+
+fieldset {
+   margin-top: 1em;
+    margin-bottom: 1em;
+	width: 600px;
+	border: none;
+	margin-left: 100px;
+	
+}
+
+legend {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.formLayout label {
+    float: left;
+    width: 7em;
+    text-align: right;
+	margin-bottom: 0.5em;
+}
+
+.formLayout select {
+    float: left;
+    width: 7em;
+    text-align: left;
+	margin-left: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+
+
+.formLayout input {
+    margin-left: 0.5em;
+	margin-right: 0.5em;
+   
+}
+
+
+
+.formLayout br {
+    clear: both;
+}
+
+
+.error {
+    color: red;
+}
+
+.notice {
+    color: red;
+    font-size: 67%;
+    text-align: right;
+	margin-left: 14.5em;
+}

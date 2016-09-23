@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+    <link rel="stylesheet" href="design.css" />
+	<script type="text/javascript" src="form_library.js"></script>
+	<script type="text/javascript" src="form.js"></script>
+	<title>The Seven Wonders of the Ancient WOrld/Newsletter Form</title>
+</head>
+<body>
+	<header><img src="seven.png" alt="Seven Wonders" /></header> 
+
+	<section id="main">
+		<h1><br /><br />Newsletter Subscription Form </h1>
+		
+		<form action="newsletter.html" method="get" name="newsletter_form" id="newsletter_form">
+			<fieldset>
+				<legend>Personal Information</legend>
+					<p class="notice">Notice: All fields are required.</p>
+					<div class="formLayout">
+						<label for="first_name">First Name:</label>
+							<input type="text" name="first_name" id="first_name" />
+								<span id="first_name_error"> &nbsp;</span><br />
+		
+						<label for="last_name">Last Name:</label>
+							<input type="text" name="last_name" id="last_name" />
+								<span id="last_name_error">&nbsp;</span><br />
+								
+						<label for="birth">Birthday:</label>
+							<input type="text" name="birth" id="birth" />
+								<span id="birth_error">Use mm/dd/yyyy format.</span><br /> 
+                
+						<label for="email">E-Mail:</label>
+							<input type="email" name="email" id="email" />
+								<span id="email_error">Must be a valid email address.</span><br />
+            
+						<label for="password">Password:</label>
+							<input type="password" name="password" id="password" />
+								<span id="password_error">Must be at least 6 characters.</span><br />
+           
+						<label for="verify">Verify Password:</label>
+							<input type="password" name="verify" id="verify" />
+								<span id="verify_error">&nbsp;</span><br />
+			
+						<label for="address">Address:</label>
+							<input type="text" name="address" id="address" />
+								<span id="address_error">&nbsp;</span><br />
+            
+						<label for="city">City:</label>
+							<input type="text" name="city" id="city" />
+								<span id="city_error">&nbsp;</span><br />
+			
+						<label for="state">State:</label>
+							<input type="text" name="state" id="state" maxlength="2"/>
+								<span id="state_error">Use 2 character abbreviation.</span><br />
+
+						<label for="zip">ZIP Code:</label>
+							<input type="text" name="zip" id="zip" />
+								<span id="zip_error">Use 5 or 9 digit ZIP code.</span><br />
+            
+						<label for="phone">Phone Number:</label>
+							<input type="text" name="phone" id="phone" />
+								<span id="phone_error">Use 999-999-9999 format.</span><br /> 		
+					</div>
+			</fieldset>
+	
+			<fieldset>
+				<div class="formLayout">
+					<label>&nbsp;</label>
+						<input type="button" id="register" value="Register" />
+						<input type="button" id="reset_form" value="Reset" /><br />
+				</div>
+			</fieldset>
+		</form>
+	
+		<div id="slideTop">
+			<nav>
+				<ul>
+					<li><a href="index.html" style="color: rgb(255, 255, 255 )">Home</a></li>
+					<li><a href="form_newsletter.html" style="color: rgb(255, 255, 255 )">Newsletter</a></li>	
+					<li><a href="tutorial.html" style="color: rgb(255, 255, 255 )">Tutorial</a></li>	
+				</ul>
+			</nav>
+		</div>
+    		
+    </section>
+</body>
+</html>
+
+
+
+
+
+

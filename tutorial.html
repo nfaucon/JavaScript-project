@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css"/>
+	<link rel="stylesheet" href="design.css" />
+	<script type="text/javascript">	    SyntaxHighlighter.all();</script>
+	<br/>
+	<title>The Seven Wonders of the Ancient WOrld/Javascript Class Tutorial</title>
+</head>
+
+<body style="background: white; font-family: Helvetica">
+
+	
+	<header><img src="seven.png" alt="Seven Wonders" /></header> 
+	<div id="slideTop">
+	<nav>
+				<ul>
+					<li><a href="index.html" style="color: rgb(255, 255, 255 )">Home</a></li>
+					<li><a href="form_newsletter.html" style="color: rgb(255, 255, 255 )">Newsletter</a></li>	
+					<li><a href="tutorial.html" style="color: rgb(255, 255, 255 )">Tutorial</a></li>	
+				</ul>
+			</nav>
+	</div>
+<div id="tutorial">
+<h1>Javascript Class Tutorial</h1>
+<p>Javascript doesn't really use classes for object programming. Instead it uses Prototype-based programming
+ accomplishing behavior reuse (equivalent to inheritance in class-based languages) by expanding upon existing prototype objects.<br />
+In JavaScript a namespace is just another object containing methods, properties, and objects.<br />
+We are going to equip it with a <i>name</i> property and two methods: <i>walk</i> and <i>sayHello</i>.<br />
+Please note that we use <i>this</i> to access the property and that the methods are children of <i>Animal.prototype</i> and not <i>Animal</i></p>
+<pre class="brush: js;">
+// Define a constructor for the Animal parent class
+var Animal = function(name) {
+  this.name = name;
+};
+
+// Add a couple of methods to Animal.prototype
+Animal.prototype.walk = function(){
+  console.log(this.name + " is walking!");
+};
+
+Animal.prototype.sayHello = function(){
+  console.log(this.name + " is looking at you.");
+};
+</pre>
+
+<p> We are now going to show a small exemple of inheritance by creating a <i>Dog</i> object that extends the <i>Animal</i> object.<br/>
+We are going to add a <i>toy</i> property, and we are going to overload the <i>sayHello</i> method and introduce a new <i>sayGoodBye</i> method.<br />
+The constructor is the trickiest part because we want to instiate the parent <i>Animal</i> correctly, and call its constructor.<br />
+Here again <i>prototype</i> is vital. Note also the way the parent constructor is called, using <i>call</i> and the way we are using <i>Object.create</i>.
+</p>
+<pre class="brush: js;">
+// Define the Dog constructor
+function Dog(name, toy) {
+  // Call the parent constructor, it is important to use Function#call
+  // with "this" is set correctly for the call
+  Animal.call(this, name);
+
+  // Initialize our Dog-specific properties
+  this.toy = toy;
+};
+
+// Create a Dog.prototype object that is inheriting from Animal.prototype.
+// you shouldn't use "new Animal()" to create the Dog.prototype.
+Dog.prototype = Object.create(Animal.prototype); // See note below
+
+// Set the "constructor" property to refer to Dog
+Dog.prototype.constructor = Dog;
+</pre>
+<p>
+We are now overriding the parent <i>sayHello</i> method, in a pretty straightforward way. Everytime we will have <br />
+an object of type <i>Dog</i>, the correct methods will be called, and not the parent methods.
+</p>
+<pre class="brush: js;">
+// Replace the "sayHello" method
+Dog.prototype.sayHello = function(){
+  console.log(this.name + " is barking. He is playing with "
+              + this.toy + ".");
+};
+
+// Add a "sayGoodBye" method
+Dog.prototype.sayGoodBye = function(){
+  console.log(this.name + " look sad to see you leave.");
+};
+</pre>
+<p>Here is the main program using the object types we have defined. It is often convenient to use <i>instanceof</i> while debugging<br />
+to make sure of what we have. You can see in the output that <i>sayHello</i> and <i>sayGoodBye</i> have been overriden but that <br />
+<i>walk</i> is the one inherited from <i>Animal</i>.
+</p> 
+<pre class="brush: js;">
+// Main program
+var fido1 = new Dog("Fido", "his bone");
+// check the type with instanceof
+if (fido1 instanceof Animal) {
+    console.log("fido1 is an Animal.");
+}
+else {
+    console.log("fido1 is an Animal.");
+}
+if (fido1 instanceof Dog) {
+    console.log("fido1 is a Dog.");
+}
+else {
+    console.log("fido1 is a Dog.");
+}
+
+// some outputs
+fido1.sayHello();   // Fido is barking. He is playing with his bone.
+fido1.walk();       // "I am walking!"
+fido1.sayGoodBye(); // "Goodbye!"
+
+</pre>
+</div>
+
+</body>
+
+</html>
